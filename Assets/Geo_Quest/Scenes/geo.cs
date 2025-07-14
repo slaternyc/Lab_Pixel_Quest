@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // Variables
 public class geo : MonoBehaviour
@@ -29,15 +30,25 @@ public class geo : MonoBehaviour
     void Update()
     {
 
-        
-            float xSpeed = Input.GetAxis("Horizontal");
-            Debug.Log(xSpeed);
+        float xSpeed = Input.GetAxis("Horizontal");
+        Debug.Log(xSpeed);
 
-            rb.velocity = new Vector2(xSpeed * speed, rb.velocity.y);
-        }
-        
+        rb.velocity = new Vector2(xSpeed * speed, rb.velocity.y);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
-        {
-            Debug.Log("Hit");
-        }
-}    
+    {
+       switch (collision.tag)
+       {
+            case "Death":
+                {
+                    string thisLevel = SceneManager.GetActiveScene().name;
+                    SceneManager.LoadScene(thisLevel);
+                    break;
+                }
+
+            } 
+    
+            
+    }   
+}
