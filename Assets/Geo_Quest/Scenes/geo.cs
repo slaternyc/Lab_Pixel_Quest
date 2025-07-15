@@ -46,8 +46,12 @@ public class geo : MonoBehaviour
                     SceneManager.LoadScene(thisLevel);
                     break;
                 }
-
-            } 
+            case "Finish":
+            
+               {
+                    SceneManager.LoadScene("Level 2");
+                    break;
+        }      }
     
             
     }   
