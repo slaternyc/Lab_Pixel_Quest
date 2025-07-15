@@ -13,6 +13,7 @@ public class geo : MonoBehaviour
     private string Shinken = "Wassup";
 
     private Rigidbody2D rb;
+    private SpriteRenderer sb;
     public int speed = 3;
 
     public string nextLevel = "Level 2";
@@ -26,6 +27,7 @@ public class geo : MonoBehaviour
         Debug.Log(Shinken + Kenshin);
 
         rb = GetComponent<Rigidbody2D>();
+        sb = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -36,6 +38,28 @@ public class geo : MonoBehaviour
         Debug.Log(xSpeed);
 
         rb.velocity = new Vector2(xSpeed * speed, rb.velocity.y);
+
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            sb.color = Color.grey;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            sb.color = Color.blue;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            sb.color = Color.yellow;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            sb.color = Color.green;
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
