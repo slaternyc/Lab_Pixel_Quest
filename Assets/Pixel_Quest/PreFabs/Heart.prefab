@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5095504127900801891}
   - component: {fileID: 5095504127900801890}
+  - component: {fileID: 1789624166029254326}
   m_Layer: 0
   m_Name: Heart
   m_TagString: Health
@@ -143,3 +144,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.74126005, y: 0.732635}
   m_EdgeRadius: 0
+--- !u!95 &1789624166029254326
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5095504127900801892}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 36870ecb6739b174d962f12c2ae4d31b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
