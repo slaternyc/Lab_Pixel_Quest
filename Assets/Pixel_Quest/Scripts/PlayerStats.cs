@@ -8,15 +8,19 @@ public class PlayerStats : MonoBehaviour
     public Transform respawnPoint;
     public string nextLevel = "Level 2";
     private int _coinCounter = 0;
+    private int coinsInLevel = 0;
     private int _health = 3;
+    public int _maxHealth = 3;
+    private PlayerUIController _playerUIController;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        coinsInLevel = GameObject.Find("Coins").transform.childCount;
+        _playerUIController = GetComponent<PlayerUIController>();
+        _playerUIController.StartUp();
+        _playerUIController.UpdateHealth(_health, _maxHealth);
+        _playerUIController.UpdateCoin(_coinCounter + "/" + coinsInLevel);
     }
-
-
   
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -34,7 +38,9 @@ public class PlayerStats : MonoBehaviour
                     if (_health < 3)
                     {
                         _health++;
+                        _playerUIController.UpdateHealth(_health, _maxHealth);
                         Destroy(collision.gameObject);
+                       
                         
                     }
                     break;
@@ -42,6 +48,7 @@ public class PlayerStats : MonoBehaviour
             case "Death":
                 {
                     _health--;
+                    _playerUIController.UpdateHealth(_health, _maxHealth);
                     if (_health <= 0)
                     {
                         string thisLevel = SceneManager.GetActiveScene().name;
@@ -61,6 +68,7 @@ public class PlayerStats : MonoBehaviour
             case "Coin":
             {
                  _coinCounter++;
+                    _playerUIController.UpdateCoin(_coinCounter + "/" + coinsInLevel);
                  Destroy(collision.gameObject);
                  break;
             }

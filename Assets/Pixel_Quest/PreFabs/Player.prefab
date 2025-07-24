@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 2163999152922030469}
   - component: {fileID: 2163999152922030468}
   - component: {fileID: 2163999152922030489}
+  - component: {fileID: 6334408282372460929}
   - component: {fileID: 2163999152922030488}
   - component: {fileID: 2163999152922030471}
   - component: {fileID: 2163999152922030490}
@@ -132,6 +133,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+--- !u!114 &6334408282372460929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2163999152922030467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e27485ebb3aab8848b83e5e596a5861a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heartImage: {fileID: 0}
+  coinText: {fileID: 0}
 --- !u!114 &2163999152922030488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,6 +161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawnPoint: {fileID: 0}
   nextLevel: Level 2
+  _maxHealth: 3
 --- !u!114 &2163999152922030471
 MonoBehaviour:
   m_ObjectHideFlags: 0
